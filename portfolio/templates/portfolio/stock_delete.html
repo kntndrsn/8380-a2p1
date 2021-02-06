@@ -1,0 +1,17 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+
+<h1>Delete {{ stock.name }} for {{ stock.customer.name }}?</h1>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <input type="submit" class="btn btn-danger" value="Delete">
+
+    <a href="{% url 'portfolio:stock_list' %} ">Cancel</a>
+
+</form>
+
+{% endblock %}
